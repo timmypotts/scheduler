@@ -30,11 +30,17 @@ function colorBlocks() {
     }
 }
 
-$(".saveBtn").on("click", function () {
+$(".saveBtn").on("click", function() {
     var val = $(this).siblings(".description").val();
     var time = $(this).parent().attr("id");
     localStorage.setItem(time, val);
 })
+
+$("#clr").on("click", function() {
+    localStorage.clear();
+    getTasks();
+    });
+    
 
 getTasks();
 setInterval(displayDate, 1000*60);
